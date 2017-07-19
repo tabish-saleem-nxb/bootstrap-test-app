@@ -1,0 +1,15 @@
+p#notice = notice
+.container
+     table.table.table-condensed
+        thead
+            tr
+                th First name
+                th Last name
+                th Email
+        tbody
+            tr
+            td = @user.first_name
+            td = @user.last_name
+            td = @user.email
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1228765915">
+    <data-source source="LOCAL" name="Rails bootstap-app: development" uuid="48d88a3c-fe05-4eee-af2a-611dde5703f2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/bootstrap_app_dev</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

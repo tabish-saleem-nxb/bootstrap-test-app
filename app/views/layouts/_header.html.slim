@@ -1,0 +1,11 @@
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      a.navbar-brand href='/'
+        /= Rails.application.class.parent_name
+        | App
+    ul.nav.navbar-nav.navbar-right
+      li
+        a.span.glyphicon.glyphicon-log-out*{'data-method'=>:delete} href=destroy_user_session_path Logout
+      li
+        a.span.glyphicon.glyphicon-user href=edit_user_path(current_user) Profile
