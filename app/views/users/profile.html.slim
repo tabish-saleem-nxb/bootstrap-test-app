@@ -1,0 +1,187 @@
+.well.well-lg
+  .profile-border
+    .container-fluid
+
+      .container-fluid
+        row
+          h3.text-center Personal Information
+
+        .row
+          .col-md-6
+              label Name:
+              | #{@user.first_name} #{@user.last_name}
+          .col-md-6
+            label Email:
+            = @user.email
+
+        .row
+          .col-md-6
+            label Age:
+            = @user.age
+          .col-md-6
+            label Mobile
+            = @user.mobile_phone
+
+        .row
+          .col-md-12
+            label About:
+            = @user.about_me
+    hr
+      .container-fluid
+        .row
+          h3.text-center Educational Information
+
+        .row
+          .col-md-12
+            h4.text-left Secondary School Information
+
+        .row
+          .col-md-12
+            label Institution Name:
+            = @user.ssc_institution
+          .col-md-12
+            label Year of Passing:
+            = @user.ssc_passing_year
+          .col-md-12
+              label Grade:
+              = @user.ssc_grade
+
+        .row
+          .col-md-12
+            h4.text-left Higher Secondary Examination
+
+        .row
+          .col-md-12
+            label Institution Name:
+            = @user.hse_institution
+          .col-md-12
+            label Year of Passing:
+            = @user.hse_passing_year
+          .col-md-12
+              label Grade:
+              = @user.hse_grade
+
+        .row
+          .col-md-12
+            h4.text-left Degree
+
+        .row
+          .col-md-12
+            label Institution Name:
+            = @user.degree_institution
+          .col-md-12
+            label Year of Passing:
+            = @user.degree_passing_year
+          .col-md-12
+              label Grade:
+              = @user.degree_cgpa
+    hr
+      .container-fluid
+        .row
+          h3.text-center Skills
+
+        .row
+          .col-md-6
+            h4
+              label Personal Skills
+            ul
+              li Hard working
+              li Tolerant
+              li Polite
+
+          .col-md-6
+            h4
+              label Professional Skills
+              ul
+                li Good Communication
+                li Team Player
+                li Influencing
+    hr
+
+
+
+    /.row
+    /  .col-md-6
+    /    h4
+    /      label Professional Skills
+
+
+/  | Country:
+/  strong= @user.country
+/  br
+/
+/  | About Me:
+/  strong= @user.about_me
+/
+/  br
+/  br
+/
+/
+/.container
+/  h4 Educational Information
+/
+/  h5 SSC Info
+/  | Institution Name:
+/  strong= @user.ssc_institution
+/  br
+/
+/  | Grade:
+/  strong= @user.ssc_grade
+/  br
+/
+/  | Passing Year:
+/  strong= @user.ssc_passing_year
+/  br
+/
+/  h5 HSE Info
+/  | Institution Name:
+/  strong= @user.ssc_institution
+/  br
+/
+/  | Grade:
+/  strong= @user.ssc_grade
+/  br
+/
+/  | Passing Year:
+/  strong= @user.ssc_passing_year
+/  br
+/
+/  h5 Degree Info
+/  | Institution Name:
+/  strong= @user.ssc_institution
+/  br
+/
+/  | Grade:
+/  strong= @user.ssc_grade
+/  br
+/
+/  | Passing Year:
+/  strong= @user.ssc_passing_year
+/  br
+/  br
+/
+/  /h3 HSE
+/  /| Institution Name:
+/  /strong= @user.hse_institution
+/  /br
+/  /
+/  /h3 Degree
+/  /| Institution Name:
+/  /strong= @user.degree_institution
+/  /br
+/
+/.container
+/  h4 Social Media
+/
+/  | Skype Name:
+/  strong= @user.skype_name
+/  br
+/
+/  | Facebook Name:
+/  strong= @user.facebook_name
+/  br
+/
+/  | Twitter Name:
+/  strong= @user.twitter_name
+br
+= link_to 'Edit Profile', edit_user_path(@user), class: 'btn btn-default'

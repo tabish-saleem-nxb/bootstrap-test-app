@@ -8,4 +8,5 @@ nav.navbar.navbar-inverse
       li
         a.span.glyphicon.glyphicon-log-out*{'data-method'=>:delete} href=destroy_user_session_path Logout
       li
-        a.span.glyphicon.glyphicon-user href=edit_user_path(current_user) Profile
+        - if current_user.present?
+          a.span.glyphicon.glyphicon-user href=user_profile_path Profile

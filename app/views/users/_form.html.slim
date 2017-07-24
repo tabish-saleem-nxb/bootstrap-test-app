@@ -7,9 +7,46 @@
       ul
         - @user.errors.full_messages.each do |message|
         li = message
-
+  br
+  h3.text-center Personal information
   = f.input :first_name, required: true
-  = f.input :last_name
-  = f.input :email
+  = f.input :last_name, required: true
+  = f.input :email, required: true
+  = f.input :mobile_phone, required: true
+  = f.input :about_me, required: true
+  = f.input :age
+  = f.input :city
+  = f.input :country
+  /= f.input :dob
+
+  br
+  h3.text-center Educational Information
+  h4 Secondary School Certificate
+  = f.input :ssc_institution, label: 'Institution Name'
+  = f.input :ssc_grade, label: 'Grade'
+  = f.input :ssc_passing_year, label: 'Passing Year'
+  br
+
+  h4 Higher School Examination
+  = f.input :hse_institution, label: 'Institution Name'
+  = f.input :hse_grade, label: 'Grade'
+  = f.input :hse_passing_year, label: 'Passing Year'
+  br
+
+  h4 Degree
+  = f.input :degree_institution, label: 'Institution Name'
+  = f.input :degree_cgpa, label: 'CGPA'
+  = f.input :degree_passing_year, label: 'Passing Year'
+
+  br
+  h3.text-center Social Media
+  = f.input :facebook_name
+  = f.input :twitter_name
+  = f.input :skype_name
+
   .actions
-    = f.submit
+    = f.button :submit, class: 'btn btn-primary'
+    |&nbsp
+    = link_to 'Cancel', :back, class: 'btn btn-default'
+  br
+  br
