@@ -210,6 +210,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   pg
   pry
   pry-nav

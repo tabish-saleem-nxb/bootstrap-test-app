@@ -1,0 +1,17 @@
+.container-fluid
+  h4.text-center
+    - if current_user.present?
+      | Welcome aboard! You are logged in now.
+    - else
+      | You are Logged out now...!, Please log in again.
+
+  .container-fluid
+    .row.text-center
+      - if current_user.present?
+        = link_to ' Logout from App', destroy_user_session_path, class: 'glyphicon glyphicon-log-out btn btn-default', data: {method: :delete}
+      - else
+        = link_to ' Login to App', '#',
+                  class: 'glyphicon glyphicon-log-in btn btn-default' , data: {toggle: 'modal', target: '#login-form'}
+
+#login-form.modal.fade role='dialog'
+  = render 'users/sign_in_modal'

@@ -1,12 +1,45 @@
-nav.navbar.navbar-inverse
+/nav.navbar-xs.navbar-inverse
+/  .container-fluid
+/    ul.nav.navbar-nav
+/      li
+/        a.span About
+/    ul.nav.navbar-nav
+/      li
+/        a.span = current_user.email
+/      li
+/        - if current_user.present?
+/          a.span.glyphicon.glyphicon-log-out*{'data-method'=>:delete} href=destroy_user_session_path Logout
+/      li
+/        - if current_user.present?
+/          a.span.glyphicon.glyphicon-user href=user_profile_path Profile
+/      li
+/       - if current_user.present?
+/       a.span.glyphicon.glyphicon-user href=user_profile_path Profile
+
+
+nav.navbar-xs.navbar-inverse
   .container-fluid
-    .navbar-header
-      a.navbar-brand href='/'
-        /= Rails.application.class.parent_name
-        | App
+    ul.nav.navbar-nav
+      li
+        a.span About
     ul.nav.navbar-nav.navbar-right
-      li
-        a.span.glyphicon.glyphicon-log-out*{'data-method'=>:delete} href=destroy_user_session_path Logout
-      li
-        - if current_user.present?
-          a.span.glyphicon.glyphicon-user href=user_profile_path Profile
+      - if current_user.present?
+        li
+          a
+            span.email-color = current_user.email
+        li
+          a href=destroy_user_session_path
+            span.glyphicon.glyphicon-off*{'data-method'=>:delete}
+            | Logout
+
+nav.navbar.navbar-inverse.custom-navbar-color
+  .container-fluid
+    ul.nav.navbar-nav
+      li.a
+        span
+          = image_tag '/assets/nb_logo_02.png', alt: 'nxb-logo', class: 'img-responsive'
+    ul.nav.navbar-nav.navbar-right
+      li Mail
+      li Address Book
+      li Settings
+
