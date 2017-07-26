@@ -1,52 +1,62 @@
-= simple_form_for(@user, html: {class: 'horizontal-form'}) do |f|
+h5 Please complete your profile first to preview it.
+= simple_form_for(@user, html: {class: 'horizontal-form well well-lg'}) do |f|
 
-  - if @user.errors.any?
-    #error_explanation
-      h2 = pluralize(@user.errors.count, "error")
-        | prohibited this user from being saved:
-      ul
-        - @user.errors.full_messages.each do |message|
-        li = message
-  br
-  h3.text-center Personal information
-  = f.input :first_name, required: true
-  = f.input :last_name, required: true
-  = f.input :email, required: true
-  = f.input :mobile_phone, required: true
-  = f.input :about_me, required: true
-  = f.input :age
-  = f.input :city
-  = f.input :country
-  /= f.input :dob
+  .row
+    h4.text-center Personal information
+  .profile-section
+    .row
+      .col-xs-6
+        .alert.alert-info
+          = f.input :first_name, autofocus: true, error: 'Last name should not be blank'
+          = f.input :last_name, error: 'Last name should not be blank'
+          = f.input :email, required: true, error: 'Email cannot be blank!'
+          = f.input :mobile_phone, required: true, hint: 'It should be 11 digits', warning: 'Mobile number should be 11 digits '
+          = f.input :about_me, required: true
+      .col-xs-6
+        .alert.alert-info
+          = f.input :city, placeholder: 'Add your current city'
+          = f.input :country
+          = f.input :dob
+          = f.input :age, required: true, hint: 'Age should be the whole number'
 
-  br
-  h3.text-center Educational Information
-  h4 Secondary School Certificate
-  = f.input :ssc_institution, label: 'Institution Name'
-  = f.input :ssc_grade, label: 'Grade'
-  = f.input :ssc_passing_year, label: 'Passing Year'
-  br
+  .row
+    h4.text-center Educational Information
+  .profile-section
+    .row
+      .col-xs-6
+        h5.text-center Secondary School Certificate
+        .alert.alert-success
+          = f.input :ssc_institution, label: 'Institution Name'
+          = f.input :ssc_grade, label: 'Grade'
+          = f.input :ssc_passing_year, label: 'Passing Year'
+      .col-xs-6
+        h5.text-center Higher School Examination
+        .alert.alert-success
+          = f.input :hse_institution, label: 'Institution Name'
+          = f.input :hse_grade, label: 'Grade'
+          = f.input :hse_passing_year, label: 'Passing Year'
+    .row
+      .col-xs-6
+        h5.text-center Degree
+        .alert.alert-success
+          = f.input :degree_institution, label: 'Institution Name'
+          = f.input :degree_cgpa, label: 'CGPA'
+          = f.input :degree_passing_year, label: 'Passing Year'
 
-  h4 Higher School Examination
-  = f.input :hse_institution, label: 'Institution Name'
-  = f.input :hse_grade, label: 'Grade'
-  = f.input :hse_passing_year, label: 'Passing Year'
-  br
+  .row
+    h4.text-center Social Media
+  .profile-section
+    .row
+      .col-xs-6
+        .alert.alert-warning
+          = f.input :skype_name
+          = f.input :facebook_name
+      .col-xs-6
+        .alert.alert-warning
+          = f.input :twitter_name
 
-  h4 Degree
-  = f.input :degree_institution, label: 'Institution Name'
-  = f.input :degree_cgpa, label: 'CGPA'
-  = f.input :degree_passing_year, label: 'Passing Year'
-
-  br
-  h3.text-center Social Media
-  = f.input :facebook_name
-  = f.input :twitter_name
-  = f.input :skype_name
-
-  .actions
-    = f.button :submit, class: 'btn btn-primary'
-    |&nbsp
-    = link_to 'Cancel', :back, class: 'btn btn-default'
-  br
-  br
+  .row.button-container
+    .actions
+      = f.button :submit, class: 'btn btn-primary'
+      |&nbsp
+      = link_to 'Cancel', users_path, class: 'btn btn-default'
