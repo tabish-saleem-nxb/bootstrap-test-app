@@ -1,45 +1,114 @@
-/nav.navbar-xs.navbar-inverse
-/  .container-fluid
-/    ul.nav.navbar-nav
-/      li
-/        a.span About
-/    ul.nav.navbar-nav
-/      li
-/        a.span = current_user.email
-/      li
-/        - if current_user.present?
-/          a.span.glyphicon.glyphicon-log-out*{'data-method'=>:delete} href=destroy_user_session_path Logout
-/      li
-/        - if current_user.present?
-/          a.span.glyphicon.glyphicon-user href=user_profile_path Profile
-/      li
-/       - if current_user.present?
-/       a.span.glyphicon.glyphicon-user href=user_profile_path Profile
-
-
 nav.navbar-xs.navbar-inverse
   .container-fluid
     ul.nav.navbar-nav
       li
-        a.span About
+        a.span
+          | About
     ul.nav.navbar-nav.navbar-right
       - if current_user.present?
         li
           a
-            span.email-color = current_user.email
+            span.email-color =current_user.email
         li
-          a href=destroy_user_session_path
-            span.glyphicon.glyphicon-off*{'data-method'=>:delete}
-            | Logout
+          a*{'data-method'=>:delete} href=destroy_user_session_path
+            span.glyphicon.glyphicon-off
+            |  Logout
 
 nav.navbar.navbar-inverse.custom-navbar-color
   .container-fluid
     ul.nav.navbar-nav
       li.a
         span
-          = image_tag '/assets/nb_logo_02.png', alt: 'nxb-logo', class: 'img-responsive'
-    ul.nav.navbar-nav.navbar-right
-      li Mail
-      li Address Book
-      li Settings
+          = link_to((image_tag '/assets/nb_logo_02.png', alt: 'nxb-logo', class: 'img-responsive'), root_path)
 
+    ul.nav.navbar-nav.navbar-right
+      li
+        a href='#'
+          span.glyphicon.glyphicon-envelope
+          |  Mail
+      li
+        a href='#'
+          span.glyphicon.glyphicon-user
+          |  Address Book
+      li
+        a
+          span.glyphicon.glyphicon-asterisk
+          |  Settings
+
+nav.navbar.navbar-default
+  .container-fluid
+    ul.nav.navbar-nav.navbar-left
+      li
+        a.text-center
+          span.glyphicon.glyphicon-refresh
+            br Refresh
+      li
+        a.text-center
+          span.glyphicon.glyphicon-plus
+            br Compose
+      li
+        a.text-center
+          span.glyphicon.glyphicon-arrow-left
+            br Reply
+
+      li.dropdown
+        a.text-center.dropdown-toggle data-toggle='dropdown'
+          span.glyphicon.glyphicon-arrow-left
+            br Reply-All
+        ul.dropdown-menu
+          li
+            a All
+          li.divider role='separator'
+          li
+            a List
+          li.divider role='separator'
+
+      li.dropdown
+        a.text-center.dropdown-toggle data-toggle='dropdown'
+          span.glyphicon.glyphicon-share-alt
+            br Forward
+        ul.dropdown-menu
+          li
+            a Inline
+          li.divider role='separator'
+          li
+            a with attachment
+
+      li
+        a.text-center
+          span.glyphicon.glyphicon-trash
+            br Delete
+
+      li.dropdown
+        a.text-center.dropdown-toggle data-toggle='dropdown'
+          span.glyphicon.glyphicon-pencil
+            br Mark
+        ul.dropdown-menu
+          li
+            a
+              span.glyphicon.glyphicon-star Read
+          li.divider role='separator'
+          li
+            a
+              span.glyphicon.glyphicon-star-empty
+                |  Unread
+          li.divider role='separator'
+          li
+            a
+              span.glyphicon.glyphicon Flag
+          li.divider role='separator'
+          li
+            a Unflag
+
+
+      li
+        a.text-center
+          span.glyphicon.glyphicon-option-horizontal
+            br More
+
+
+    ul.nav.navbar-nav.navbar-right
+      li
+        a.text-center
+          span.glyphicon.glyphicon-refresh
+            br Refresh

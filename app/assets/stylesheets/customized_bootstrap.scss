@@ -2,8 +2,8 @@
   min-height:28px;
   height: 28px;
   //
-  background: #666 !important;
-  color: #aaa !important;
+  background: #4B4B4B !important;
+  color: #AAAAAA !important;
   border-bottom: 1px solid #4f4f4f !important;
 }
 .navbar-xs .navbar-brand{
@@ -21,8 +21,14 @@
 }
 
 nav.navbar.navbar-inverse.custom-navbar-color {
-  background: #060606 !important;
+  background: #2E2E2E !important;
+  margin-bottom: 0px !important;
 }
+
+//ul > li > a > .glyphicon
+//{
+//  background-color: white !important;
+//}
 
 @media (min-width: 768px) {
   .navbar {

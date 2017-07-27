@@ -1,0 +1,11 @@
+- if flash[:alert] and not flash[:alert].blank?
+  .alert.alert-danger.alert-dismissable.fade.in role='alert'
+    a.close data-dismiss='alert' &times
+    strong= flash[:alert]
+- elsif flash[:notice] and not flash[:notice].blank?
+  .alert.alert-success.alert-dismissable.fade.in role='alert'
+    a.close data-dismiss='alert' &times
+    strong= flash[:notice]
+- elsif flash[:error] and not flash[:error].blank?
+  p.error_class
+    = flash[:error]
