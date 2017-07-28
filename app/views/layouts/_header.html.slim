@@ -1,4 +1,4 @@
-nav.navbar-xs.navbar-inverse
+nav.navbar-xs.navbar-inverse#topline
   .container-fluid
     ul.nav.navbar-nav
       li
@@ -34,8 +34,9 @@ nav.navbar.navbar-inverse.custom-navbar-color
         a
           span.glyphicon.glyphicon-asterisk
           |  Settings
+          #show-hide.caret
 
-nav.navbar.navbar-default
+nav.navbar.navbar-default.header-bg-color
   .container-fluid
     ul.nav.navbar-nav.navbar-left
       li
@@ -86,29 +87,150 @@ nav.navbar.navbar-default
         ul.dropdown-menu
           li
             a
-              span.glyphicon.glyphicon-star Read
+              span.glyphicon.glyphicon-star
+                | Read
           li.divider role='separator'
           li
             a
               span.glyphicon.glyphicon-star-empty
-                |  Unread
+                | Unread
           li.divider role='separator'
           li
             a
-              span.glyphicon.glyphicon Flag
+              span.glyphicon.glyphicon-flag
+                | Flagged
           li.divider role='separator'
           li
-            a Unflag
+            a
+              span.glyphicon.glyphicon-flag
+                | Unflagged
 
 
-      li
-        a.text-center
+      li.dropdown
+        a.text-center.dropdown-toggle data-toggle='dropdown'
           span.glyphicon.glyphicon-option-horizontal
             br More
+          ul.dropdown-menu
+            li
+              a
+                span.glyphicon.glyphicon-print
+                  | print this message
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-download
+                  | Download (.eml)
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-edit
+                  | Edit as new
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-tent
+                  | Show source
+            li.divider role='separator'
+
+
+            li.dropdown-submenu
+              a.test.dropdown-toggle data-toggle='dropdown'
+                span.glyphicon.glyphicon-move
+                | Move to..
+
+              ul.dropdown-menu
+                li
+                  a
+                    span.glyphicon.glyphicon-inbox
+                    | Inbox
+                li.divider role='separator'
+                li
+                  a
+                    span.glyphicon.glyphicon-new-window
+                    | Draft
+                li.divider role='separator'
+                li
+                  a
+                    span.glyphicon.glyphicon-new-window
+                    | Sent
+                li.divider role='separator'
+                li
+                  a
+                    span.glyphicon.glyphicon-new-window
+                    | Junk
+                li.divider role='separator'
+                li
+                  a
+                    span.glyphicon.glyphicon-new-window
+                    | Trash
+
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-copy
+                  | Copy to..
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-new-window
+                  | Open in new window
+            li.divider role='separator'
+            li
+              a
+                span.glyphicon.glyphicon-filter
+                  | create filter
 
 
     ul.nav.navbar-nav.navbar-right
       li
-        a.text-center
-          span.glyphicon.glyphicon-refresh
-            br Refresh
+        a
+          = form_tag '#', method: :get, class: 'form-horizontal form-group has-feedback' do
+            .input-group
+              span
+                = text_field_tag :search, '',  class: 'form-control', placeholder: 'Search..'
+              i.form-control-feedback.glyphicon.glyphicon-remove
+
+      li.dropdown
+        a.dropdown-toggle data-toggle='dropdown'
+          button.btn.btn-default.btn-horizontal
+            span
+              | All
+        ul.dropdown-menu
+          li
+            a
+              span.text-center.glyphicon.glyphicon-inbox
+                | Unread
+          li
+            a
+              span.text-center.glyphicon.glyphicon-inbox
+                | Flagged
+          li
+            a
+              span.text-center.glyphicon.glyphicon-inbox
+                | Unanswered
+          li
+            a
+              span.text-center.glyphicon.glyphicon-inbox
+                | Priority
+
+javascript:
+  $(document).ready(function () {
+
+    $('.dropdown-submenu a.test').on("click", function (e) {
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
+    $('#show-hide').on('click', function(e){
+
+      if ($('#topline').is(':visible') == true){
+        $('#topline').hide();
+
+      }else {
+        $('#topline').show();
+      }
+
+    });
+
+  });
