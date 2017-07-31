@@ -1,0 +1,21 @@
+nav.navbar.navbar-inverse.custom-navbar-color
+  .container-fluid
+    ul.nav.navbar-nav
+      li.a
+        span
+          = link_to((image_tag '/assets/nb_logo_02.png', alt: 'nxb-logo', class: 'img-responsive'), root_path)
+
+    ul.nav.navbar-nav.navbar-right
+      li
+        a href='#'
+          span.glyphicon.glyphicon-envelope
+          |  Mail
+      li
+        a href='#'
+          span.glyphicon.glyphicon-user
+          |  Address Book
+      li
+        a
+          span.glyphicon.glyphicon-asterisk
+          |  Settings
+          #show-hide.caret
