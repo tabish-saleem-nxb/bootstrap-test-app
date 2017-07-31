@@ -59,5 +59,70 @@ ul > li.dropdown > a > button.btn-horizontal{
 
 .header-bg-color{
   background: #D3D3D3 !important;
-  border-color: black !important;
+  border-color: #D3D3D3 !important;
+}
+
+html, body, .full-height-container{
+  height:100% !important;
+  background: #D3D3D3 !important;
+}
+
+.fix-height{
+  height: 40px !important;
+}
+
+.sidebar-style{
+//  width: 25%;
+  padding-top: 5px;
+  height: 60% !important;
+  border: solid 1px #AAAAAA !important;
+  border-radius: 4px !important;
+  background-color: #d9ecf4 !important;
+  color: #004458 !important;
+}
+
+.body-container{
+  border: solid 1px #AAAAAA !important;
+  background-color: #f1f1f1 !important;
+  border-radius: 4px !important;
+  color: #000!important;
+  height: 60% !important;
+  padding: 0 5px 0 0 !important;
+  margin-left: 14%;
+}
+
+.remove-bullet{
+  list-style: none;
+}
+
+.separator{
+  border-top: 1px solid white;
+  margin: 9px 0;
+}
+
+a, u {
+  text-decoration: none !important;
+}
+
+.text-color{
+  color: #004458 !important;
+}
+
+.side-bar-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  border-top: 1px solid #ccdde4;
+  background: #d9ecf4;
+}
+
+.lg-glyphicon{
+  font-size: 18px;
+  padding: 8px 16px;
+}
+
+.container-fluid > .w3-sidebar  a:hover{
+  background: none;
 }

@@ -1,17 +1,70 @@
 .container-fluid
-  h4.text-center
-    - if current_user.present?
-      | Welcome aboard! You are logged in now.
-    - else
-      | You are Logged out now...!, Please log in again.
+  .w3-sidebar.w3-bar-block.sidebar-style
 
-  .container-fluid
-    .row.text-center
-      - if current_user.present?
-        = link_to ' Logout from App', destroy_user_session_path, class: 'glyphicon glyphicon-log-out btn btn-default', data: {method: :delete}
-      - else
-        = link_to ' Login to App', '#',
-                  class: 'glyphicon glyphicon-log-in btn btn-default' , data: {toggle: 'modal', target: '#login-form'}
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  Inbox
+    hr.separator
 
-#login-form.modal.fade role='dialog'
-  = render 'users/sign_in_modal'
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-pencil
+          |  Draft
+    hr.separator
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  Sent
+    hr.separator
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+
+          span.glyphicon.glyphicon-envelope
+          |  Junk
+    hr.separator
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  Trash
+    hr.separator
+
+    .text-color.side-bar-bottom href='#'
+      a
+        span.glyphicon.glyphicon-asterisk.lg-glyphicon#dropdownMenu2
+          .caret
+        ul.dropdown-menu aria-labelledby="dropdownMenu2"
+          li
+            a href="#"  Compact
+          li
+            a href="#"  Empty
+          li
+            a href="#"  Import messages
+          li
+            a href="#"  Manage folders
+          li.divider role="separator"
+          li
+            a href="#"  Separated link
+      span
+        span.glyphicon.glyphicon-adjust.lg-glyphicon
+        span.md-font 50%
+
+
+/! Page Content
+.container-fluid
+  .body-container
+    .w3-container
+      h1 My Page
+    /img alt="Car" src="img_car.jpg" style="width:100%" /
+    .w3-container
+      h2 Sidebar Navigation Example
+      p The sidebar with is set with "style="width:25%".
+      p The left margin of the page content is set to the same value.

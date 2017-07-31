@@ -13,3 +13,12 @@ nav.navbar-xs.navbar-inverse#topline
           a*{'data-method'=>:delete} href=destroy_user_session_path
             span.glyphicon.glyphicon-off
             |  Logout
+      - else
+        li
+          a*{'data-toggle'=> 'modal', 'data-target'=>'#login-form'} href='#'
+            span.glyphicon.glyphicon-off
+            |  Login
+
+
+#login-form.modal.fade role='dialog'
+  = render 'users/sign_in_modal'
