@@ -1,0 +1,26 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      button.close type='button' data-dismiss='modal' &times;
+      h3.modal-title.text-center Create New Email
+    = simple_form_for Email.new do |f|
+      .modal-body
+        .container-fluid
+          .row
+            .col-md-6
+              = label_tag :from
+              = text_field_tag :from
+            .col-md-6
+              = label_tag :to
+              = text_field_tag :to
+          hr.separator
+          .row
+            .col-md-12
+              = f.input :subject
+          .row
+            .col-md-12
+              = f.input :content
+      .modal-footer
+        .row
+          .col-md-12
+            = f.button :submit

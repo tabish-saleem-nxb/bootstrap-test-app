@@ -37,25 +37,57 @@
           |  Trash
     hr.separator
 
-    .text-color.side-bar-bottom href='#'
-      a
-        span.glyphicon.glyphicon-asterisk.lg-glyphicon#dropdownMenu2
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  My Folder 1
+    hr.separator
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  My Folder 2
+    hr.separator
+
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  My Folder 3
+    hr.separator
+
+
+    a.text-color href='#'
+      ul.remove-bullet
+        li
+          span.glyphicon.glyphicon-envelope
+          |  My Folder 4
+    hr.separator
+
+
+    .dropup.text-color.side-bar-bottom
+      #dropdown-menu-up.dropdown-toggle aria-expanded='false' aria-haspopup='true' data-toggle='dropdown'
+        /hr.separator
+        span.glyphicon.glyphicon-asterisk.lg-glyphicon.no-padding
           .caret
-        ul.dropdown-menu aria-labelledby="dropdownMenu2"
-          li
-            a href="#"  Compact
-          li
-            a href="#"  Empty
-          li
-            a href="#"  Import messages
-          li
-            a href="#"  Manage folders
-          li.divider role="separator"
-          li
-            a href="#"  Separated link
-      span
-        span.glyphicon.glyphicon-adjust.lg-glyphicon
-        span.md-font 50%
+        span
+          span.glyphicon.glyphicon-adjust.lg-glyphicon
+          span.md-font 50%
+      ul.dropdown-menu aria-labelledby='dropdown-menu-up'
+        li
+          a href='#'  Compact
+        li.divider role='separator'
+        li
+          a href='#'  Empty
+        li.divider role='separator'
+        li
+          a href='#'  Import messages
+        li.divider role='separator'
+        li
+          a href='#'  Separated link
 
 
 /! Page Content

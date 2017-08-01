@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Subject:
+  = @email.subject
+
+= link_to 'Edit', edit_email_path(@email)
+'  |
+= link_to 'Back', emails_path
